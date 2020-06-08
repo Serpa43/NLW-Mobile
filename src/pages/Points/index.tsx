@@ -17,6 +17,7 @@ interface Item{
 interface Point{
   id: number;
   image: string;
+  image_url: string;
   name: string;
   lat: number;
   lng: number;
@@ -127,7 +128,7 @@ const Points = () => {
                   {points.map(point => (
                     <Marker style={styles.mapMarker} key={String(point.id)} onPress={() => handleNavigateToDetail(point.id)} coordinate ={{latitude: point.lat, longitude: point.lng}}>
                     <View style={styles.mapMarkerContainer}>
-                      <Image style={styles.mapMarkerImage} source={{ uri: point.image }}/>
+                      <Image style={styles.mapMarkerImage} source={{ uri: point.image_url }}/>
                   <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                   </View>
                     </Marker>
